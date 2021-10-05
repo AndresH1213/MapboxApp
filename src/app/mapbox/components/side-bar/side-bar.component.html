@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <li *ngFor="let item of sidebarMenu"
+        class="list-group-item list-group-item-dark"
+        [routerLink]="item.route"
+        routerLinkActive='active'
+        [routerLinkActiveOptions]="{ exact: true }"
+        >
+        {{ item.name }}
+    </li>
+</ul>

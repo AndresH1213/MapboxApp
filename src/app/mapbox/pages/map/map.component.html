@@ -1,0 +1,43 @@
+<div #map class="map-container"></div>
+
+<div class="markers-container">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info" (click)="addMarker()">
+            + Add
+        </li>
+        <li class="list-group-item" 
+            *ngFor="let marker of markers; let i = index" 
+            (click)="goMarker(marker.marker!)"
+            (dblclick)="deleteMarker(i)"
+            [ngStyle]="{
+                'background-color': marker.color
+            }">
+        Marker {{ i + 1 }}
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="container-label">
+            <label class="form-label">
+                Zoom: {{ zoomLevel | number: '2.2-2' }}
+            </label>
+            <label class="form-label">
+                Long, Lat: [{{ center[0] | number: '2.5-5' }}, {{center[1] | number: '2.5-5' }}]
+            </label>
+        </div>
+        <input type="range" class="form-range" id="customRange" min="1" max="18" [value]="zoomLevel" #zoomInput
+            (input)="zoomChange( zoomInput.value )">
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" (click)="zoomOut()">
+            -
+        </button>
+        <button class="btn btn-primary float-end" (click)="zoomIn()">
+            +
+        </button>
+    </div>
+</div>
+
+<app-side-bar></app-side-bar>

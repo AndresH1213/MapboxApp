@@ -1,3 +1,8 @@
+# General Project Description.
+
+This Angular Project used Mapbox to show Maps and allow put markers, the markers can be save in the local Storage, then the user can
+associate the marker location to a title and a description and create a card to save the place. In the chart section makes http request to Population Api to generate a chart with random Countries.
+
 # Mapbox
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.

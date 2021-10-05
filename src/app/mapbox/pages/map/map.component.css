@@ -1,0 +1,38 @@
+.row {
+    background-color: white;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 10px;
+    z-index: 999;
+    width: 400px
+  }
+
+  .container-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .form-label {
+      padding: 0;
+      margin-bottom: 0;
+  }
+
+.map-container {
+    width: 100vw;
+    height: 92vh;
+}
+
+.list-group {
+    position: fixed;
+    top: 6rem;
+    right: 20px;
+    z-index: 99;
+    opacity: 80%;
+  }
+
+  li {
+    cursor: pointer;
+  }

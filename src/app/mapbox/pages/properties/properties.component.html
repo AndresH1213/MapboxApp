@@ -1,0 +1,75 @@
+<div class="row mt-3">
+    <div class="col-2"></div>
+    <div class="col">
+        <h1>Property's List</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="row container">
+    <div class="col-2"></div>
+    <div class="col">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4  mb-2"
+                *ngFor="let property of properties">
+                <div class="card">
+                    <app-map-xs [lngLat]=property.lngLat class="card-img-top"></app-map-xs>
+                    <div class="card-body"> 
+                        <h5 class="card-title"> {{ property.title }}</h5>
+                        <p class="card-text">{{ property.description }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-dark add-btn" (click)="addProperty()"> + Add </button>
+<button class="btn btn-secondary delete-btn" (click)="deleteProperties()">Delete</button>
+
+<div *ngIf="showSelect" class="form-container">
+    <form [formGroup]="propertyForm" (ngSubmit)="save()">
+        <div class="row mb-3">
+            <label class="form-label">Location</label>
+            <div class="col-sm-12">
+                <select class="form-control" formControlName="marker">
+                    <option value=""> -- Select the market </option>
+                    <option *ngFor="let marker of markers"
+                            [value]="marker.id">{{ marker.name }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label">Title</label>
+            <div class="col-sm-12">
+                <input type="text"
+                        class="form-control"
+                        formControlName="title"
+                        placeholder="Property title...">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label col-sm">Description</label>
+            <div class="col-sm-12">
+                <textarea class="form-control"
+                         cols="10" rows="3"
+                         formControlName="description"
+                         placeholder="Add a description..."></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <button type="submit"
+                        class="btn btn-dark ms-3 btn-save"
+                        [disabled]="propertyForm.invalid">
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<app-side-bar></app-side-bar>

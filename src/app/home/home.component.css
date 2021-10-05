@@ -1,0 +1,59 @@
+.content-container {
+    background-image: url('https://vantravellers.com/wp-content/uploads/2020/07/mapa-mundi-fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: 98%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100vw;
+    height: 91vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop {
+    width: 497px;
+    padding: 0;
+    margin-right: 100px;
+    margin-top: 10px;
+    height: 40vh;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+img {
+    width: 496px;
+    height: 40vh;
+    border-radius: 15px;
+    padding: 0;
+    opacity: 90%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.btn-dark {
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+}
+.btn-dark:hover {
+    background-color: rgb(85, 85, 85);
+}
+
+@media only screen and (max-width: 980px){
+    .laptop {
+        display: none;
+    }
+    .content-container {
+         background-image: url('src/assets/images/cool-background.svg');
+         background-size: 250%;
+    }
+}

@@ -1,0 +1,29 @@
+<div >
+    <h2 >Population Interactive Pie Chart</h2>
+</div>
+<div class="row">
+    <div class="col-8">
+        <div style="display: block">
+            <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              [colors]="colors">
+            </canvas>
+        </div>
+    </div>
+    <div class="col-3 card bg-dark">
+        <button class="btn btn-secondary" (click)="randomCountries()">Random</button>
+        <div>
+            <p class="card">
+                World Population: {{ globalPopulation | number }}<br>
+                Total Number Contries: {{ allCountries.length }}
+            </p>
+            <div class="card ms-2, mr-2"  *ngFor="let country of doughnutChartLabels; let i = index">
+                <hr>
+                Country: {{country}} <br>
+                Population: {{ +doughnutChartData[0][i] | number}}
+            </div>
+        </div>
+    </div>
+</div>
