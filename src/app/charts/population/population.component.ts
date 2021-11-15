@@ -32,7 +32,8 @@ interface countryObject {
         align-self: center;
       }
       .population-title {
-        margin-left: 10px
+        margin-left: 10px;
+        text-shadow: 2px;
       }
 
     `,
