@@ -125,7 +125,7 @@ export class PropertiesComponent implements OnInit{
       }
       this.markers.push(markerObject)
     }
-    console.log(this.markers)
+    // console.log(this.markers)
   }
 
   readPropertiesLS() {

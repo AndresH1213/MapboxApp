@@ -7,6 +7,7 @@ import { ChartsModule as Ng2ChartModule } from 'ng2-charts';
 
 import { PopulationComponent } from './population/population.component';
 import { ChartRoutingModule } from './charts-routing.module';
+import { MapboxModule } from '../mapbox/mapbox.module';
 
 
 
@@ -17,8 +18,9 @@ import { ChartRoutingModule } from './charts-routing.module';
   imports: [
     CommonModule,
     ChartRoutingModule,
+    MapboxModule,
     Ng2ChartModule,
-    HttpClientModule 
+    HttpClientModule
   ]
 })
 export class ChartsPModule { }

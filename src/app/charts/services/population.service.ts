@@ -4,6 +4,7 @@ import { AllCountries } from '../interfaces/countries.interface';
 import { CountryPopulation } from '../interfaces/country-population.interface';
 import { combineLatest, Observable } from 'rxjs';
 import { GlobalPopulation } from '../interfaces/global-population.interface';
+import {tap} from 'rxjs/operators'
 
 interface HeadersRequest {
   'x-rapidapi-host' : string;

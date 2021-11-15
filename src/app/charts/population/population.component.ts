@@ -25,10 +25,14 @@ interface countryObject {
         margin-top: 5px;
         padding: 2px;
         text-align: center;
+        z-index: -1;
       }
       .btn {
         width: 150px;
         align-self: center;
+      }
+      .population-title {
+        margin-left: 10px
       }
 
     `,
@@ -41,16 +45,14 @@ export class PopulationComponent implements OnInit {
   globalPopulation: number = 0;
   // Doughnut
   public doughnutChartLabels: Label[] = [
+    'Canada',
     'Mexico',
-    'Japan',
-    'United States',
-    'China',
+    'Argentina',
+    'Spain',
     'Colombia'
   ];
   public doughnutChartData: MultiDataSet = [
-    [128932753, 126476461, 331002651, 1439323776, 50882891],
-    //  [50, 150, 120],
-    //  [250, 130, 70],
+    [],
   ];
   public colors: Color[] = [
     {
@@ -66,6 +68,16 @@ export class PopulationComponent implements OnInit {
       this.allCountries = data.body.countries;
     });
 
+    // set the initial population country data
+    let initialCountries = this.doughnutChartLabels.map(value => value.toString());
+    this.ps.getCountriesData(initialCountries).subscribe(countries => {
+      countries.forEach(countryData => {
+        let countryPopulation = countryData.body.population
+        this.doughnutChartData[0].push(countryPopulation)
+      })
+    })
+
+    // get the global population
     this.ps.getGlobalPopulation().subscribe(value => this.globalPopulation = value.body.world_population)
   }
 

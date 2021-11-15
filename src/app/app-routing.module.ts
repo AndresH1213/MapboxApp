@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./mapbox/mapbox.module').then(m => m.MapboxModule)
   },
   {
-    path: 'charts',
+    path: 'places',
     loadChildren: () => import('./charts/charts.module').then(m => m.ChartsPModule)
   },
   {

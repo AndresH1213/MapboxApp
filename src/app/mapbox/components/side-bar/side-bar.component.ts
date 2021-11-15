@@ -43,7 +43,7 @@ export class SideBarComponent {
     },
     {
       route: '/maps/properties',
-      name: 'Properties',
+      name: 'Places',
     },
   ];
 

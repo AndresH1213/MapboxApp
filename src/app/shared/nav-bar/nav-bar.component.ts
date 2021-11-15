@@ -42,8 +42,8 @@ export class NavBarComponent implements OnInit {
       name: 'Maps'
     },
     {
-      route: '/charts',
-      name: 'Charts'
+      route: '/places',
+      name: 'Places'
     }
   ]
 

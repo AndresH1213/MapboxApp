@@ -22,6 +22,9 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     CommonModule,
     MapboxRoutingModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    PropertiesComponent
   ]
 })
 export class MapboxModule { }
